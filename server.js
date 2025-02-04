@@ -63,7 +63,7 @@ app.get('/api/classify-number', async (req, res) => {
         const number = Number(req.query.number); // Get the number from the URL (e.g., /api/classify-number?number=371)
 
         // Validate input: Check if the value is a valid integer
-        if (isNaN(number) || !Number.isInteger(number)) {
+        if (isNaN(number)) {
             return res.status(400).json({
                 number: req.query.number,
                 error: true // If it’s not a valid number, return an error message 400
